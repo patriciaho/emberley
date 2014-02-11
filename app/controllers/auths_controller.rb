@@ -17,8 +17,8 @@ class AuthsController < ApplicationController
 				session[:user_id] = @user.id
 				redirect_to images_path
 		else
-				flash[:error] = "Incorrect username/password"
 				redirect_to images_path
+				flash[:error] = "Incorrect username/password"
 		end
 	end
 

@@ -1,6 +1,7 @@
 <h1>Images Show</h1>
-<p><%= @image.name %></p>
-<%= image_tag @image.avatar.url %>
+<!-- <p><%= @image.name %></p>
+<%#= image_tag @image.avatar.url %> -->
+<%= image_tag @image.image.url %>
 
 <%= link_to 'All', images_path %>
 <%= link_to 'New', new_image_path %>

@@ -4,15 +4,20 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'rails_12factor'
+gem 'figaro'
 
-gem "mongoid-paperclip", :require => "mongoid_paperclip", github: 'florentmorin/mongoid-paperclip'
-gem "aws-s3", :require => "aws/s3"
+# gem "mongoid-paperclip", :require => "mongoid_paperclip", github: 'florentmorin/mongoid-paperclip'
+# gem "aws-s3", :require => "aws/s3"
 gem 'bcrypt-ruby', github: 'codahale/bcrypt-ruby'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.1.0'
 gem 'font-awesome-sass'
+
+#Dragonfly for image uploads to Amazon S3
+gem 'dragonfly', "~>1.0.3"
+gem 'dragonfly-s3_data_store'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

@@ -22,7 +22,9 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:avatar).permit( :avatar, :name )
+    # Paperclip
+    # params.require(:avatar).permit( :avatar, :name )
+    params.require(:image).permit(:name, :image)
   end
 
 end

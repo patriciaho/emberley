@@ -20,9 +20,6 @@ class UsersController < ApplicationController
         redirect_to images_path
         flash[:error] = "Username already exists"
       end
-    # Another way to do the same thing:
-    # User.create(params[:user].permit(:username, :password))
-    #   redirect_to user_path
   end
 
   def login
@@ -31,7 +28,6 @@ class UsersController < ApplicationController
       redirect_to images_path
     else
       redirect_to images_path
-      flash[:error] = "Username does not exist"
     end
   end
   
