@@ -12,10 +12,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         @user = User.find_by(username: params[:user][:username])
-      if @user && @user.authenticated?(params[:user][:password]) 
-          session[:user_id] = @user.id
-          redirect_to images_path
-      end
+        if @user && @user.authenticated?(params[:user][:password]) 
+            session[:user_id] = @user.id
+            redirect_to images_path
+        end
       else
         redirect_to images_path
         flash[:error] = "Username already exists"
@@ -28,7 +28,8 @@ class UsersController < ApplicationController
   def login
     @user = User.find(params[:username])
     if @user.authenticate? == true
-      redirect_to action: 'images/index'
+      redirect_to images_path
+      flash[:error] = "Username does not exist"
     else
       redirect_to images_path
     end
