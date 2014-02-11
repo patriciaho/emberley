@@ -29,9 +29,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:username])
     if @user.authenticate? == true
       redirect_to images_path
-      flash[:error] = "Username does not exist"
     else
       redirect_to images_path
+      flash[:error] = "Username does not exist"
     end
   end
   
