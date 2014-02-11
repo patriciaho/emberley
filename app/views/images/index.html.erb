@@ -1,0 +1,31 @@
+<div class="main">
+</div>
+<div class="images">
+<% @images.each do |image| %>
+	<div class="draw"><%= image_tag image.avatar.url %></div>
+<% end %>
+</div>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Create a New User</h4>
+      </div>
+      <div class="modal-body">
+      	<p>All fields required</p>
+		<%=form_for User.new do |user|%>
+			<%=user.text_field :first, :placeholder => "First name", class: "form-control" %><br>
+			<%=user.text_field :last, :placeholder => "Last name", class: "form-control" %><br>
+			<%=user.text_field :username, :placeholder => "Choose a username", class: "form-control" %><br>
+			<%=user.password_field :password, :placeholder => "Choose a password", class: "form-control" %><br>
+		<div class="modal-footer">
+		<%= user.submit "Create New User", class: "btn btn-primary" %>
+		</div>
+		<% end %>
+      </div>
+    </div>
+  </div>
+</div>
