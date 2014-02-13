@@ -1,7 +1,15 @@
 class ImagesController < ApplicationController
 
   def index
-    @images = Image.all
+    if params[:view] == 'all'
+      @images = Image.all
+    elsif params[:view] == 'cars'
+      @images = Image.where(category: 'cars')
+    elsif params[:view] == 'animals'
+      @images = Image.where(category: 'animals')
+    else
+      @images = Image.all
+    end
   end
 
   def new
@@ -43,7 +51,7 @@ class ImagesController < ApplicationController
   def image_params
     # Paperclip
     # params.require(:avatar).permit( :avatar, :name )
-    params.require(:image).permit(:name, :image)
+    params.require(:image).permit(:name, :image, :category)
   end
 
 end

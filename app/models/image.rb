@@ -3,6 +3,7 @@ class Image
   extend Dragonfly::Model
 
   dragonfly_accessor :image
+  has_many :variations
 
   # Paperclip
   # include Mongoid::Paperclip

@@ -1,0 +1,7 @@
+<%=form_for User.new, {url:"/auths", method:"post"} do |user|%>
+	<%=user.text_field :username, :placeholder => "Enter username", class: "form-control" %><br />
+	<%=user.password_field :password, :placeholder => "Enter password", class: "form-control" %><br />
+	<%= user.submit "Go!", class: "btn btn-primary" %>&nbsp;&nbsp;&nbsp;<a href="#" data-toggle="modal" data-target="#myModal">Sign Up!</a>
+<% end %>
+
+
