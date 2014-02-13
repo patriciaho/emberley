@@ -1,9 +1,21 @@
-<div class="main">
-</div>
-<div class="images">
+<% if current_user %>
 
-<% @images.each do |i| %>
-  <div><%= image_tag i.image.url %></div>
+  <% if current_user.username == 'emberley' %>
+    
+    <%= render partial: 'admin' %>
+
+  <% else %>
+    
+    <!-- User accessible page -->
+    <%= render partial: 'user' %>
+
+  <% end %>
+
+<% else %>
+
+  <!-- Welcome Screen -->
+  <div class="main"></div>
+
 <% end %>
 
 <!-- Sign Up Pop-up Screen-->

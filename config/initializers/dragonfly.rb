@@ -16,9 +16,10 @@ Dragonfly.app.configure do
   #   server_root: Rails.root.join('public')
 
   datastore :s3,
-    bucket_name: 'emberley',
-    access_key_id: 'AKIAJI2GHN4ZVRB7ZGNA',
-    secret_access_key: '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'
+    bucket_name: ENV['BUCKET_NAME'],
+    access_key_id: ENV['ACCESS_KEY_ID'],
+    secret_access_key: ENV['SECRET_ACCESS_KEY']
+
 end
 
 # Logger

@@ -58,19 +58,57 @@ form {
 
 .modal-footer {
 	text-align: center;
-	padding: 30px 20px 0px 20px;
 }
 
-.draw {
-	border: 1px solid gray;
-	border-bottom: 0px;
+.images {
 	width: 100%;
 	margin: 0 auto;
+	margin-top: 428px;
+	z-index: -999;
 
-	/*img {
+	img {
 		width: 100%;
-	}*/
+	}
 }
 
+.new_image {
+
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 50px;
+	text-align: right;
+
+	input {
+		margin-top: 20px;
+	}
+
+}
+
+#sketch {
+	
+	position: fixed; 
+	border-bottom: 1px solid #ccc;
+	background: #ccc; 
+	top: 84px; 
+	width: 100%;
+
+	.tools {
+
+		background: white;
+		padding: 5px 0;
+		border-bottom: 1px solid #ccc;
+
+	}
+
+	#canvas {
+
+		background: white;
+		text-align: center;
+		width: 800px;
+		margin: 0 auto;
+
+	}
+
+}
 
 

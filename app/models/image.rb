@@ -19,6 +19,7 @@ class Image
 
   #Dragonfly
   field :name, type: String
+  field :category, type: String
   field :image_uid,  type: String
   field :image_name, type: String
   

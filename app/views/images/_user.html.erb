@@ -1,0 +1,22 @@
+<script src="/assets/sketch.js"></script>
+
+<input type="button" id="hideshow" value="hide/show draw pad" style="position: fixed; top: 50px;" class="btn btn-default btn-block" onclick="toggle();">
+
+<div id="sketch">
+	<div id="canvas">
+		<div class="tools">
+			<a href="#colors_sketch" data-download="png" style="float: right; width: 100px;">Download</a>
+			<a href="#colors_sketch" data-tool="marker" class="btn btn-default">Marker</a>
+	  		<a href="#colors_sketch" data-tool="eraser" class="btn btn-default">Eraser</a>	
+	  		<a href='#colors_sketch' data-clear="true" class="btn btn-default">Clear</a> 
+	  		<!-- Colors and pen sizes generated in sketch_tools.js files -->
+		</div>
+		<canvas id="colors_sketch" width="800" height="300"></canvas>
+	</div>
+</div>
+
+<div class="images" style="position: relative;">
+	<% @images.each do |i| %>
+		<div><%= image_tag i.image.url if i.image_stored? %></div>
+	<% end %>
+</div>

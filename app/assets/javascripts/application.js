@@ -15,3 +15,15 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+var toggle = function() {
+  var mydiv = document.getElementById('sketch');
+  var imgdiv = document.getElementsByClassName('images')[0];
+  if (mydiv.style.display === 'block' || mydiv.style.display === '') {
+    mydiv.style.display = 'none';
+	imgdiv.style.margin = '84px 0px 0px 0px';}
+  else {
+    mydiv.style.display = 'block';
+	imgdiv.style.margin = '428px 0px 0px 0px';}
+}
+

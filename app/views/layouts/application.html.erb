@@ -18,7 +18,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="/"></a>
+		      <a class="navbar-brand" href="#"></a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,20 +40,20 @@
 		        </li>
 		      </ul> -->
 		      <ul class="nav navbar-nav navbar-right">
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
-		          <ul class="dropdown-menu">
-		          	<form role="search">
-		        		<div class="form-group">
-		          		<input type="text" class="form-control" placeholder="Search">
-		        		</div>
-		        		<button type="submit" class="btn btn-default">Submit</button>
-		      		</form>
-		          </ul>
-		        </li>
 		        <% if current_user %>
+		        	<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
+			          <ul class="dropdown-menu">
+			          	<form role="search">
+			        		<div class="form-group">
+			          		<input type="text" class="form-control" placeholder="Search">
+			        		</div>
+			        		<button type="submit" class="btn btn-default">Submit</button>
+			      		</form>
+			          </ul>
+			        </li>
 		        	<li>
-			        	<a>Hi, <%= current_user.username.capitalize if current_user %>!</a>
+			        	<a>Hi , <%= current_user.username.capitalize if current_user %> ! </a>
 			        </li>
 			        <li><a>|</a></li>
 			        <li>
@@ -67,8 +67,8 @@
 		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In <b class="caret"></b></a>
 		        	<ul class="dropdown-menu">
 						<%=form_for User.new, {url:"/auths", method:"post"} do |user|%>
-							<%=user.text_field :username, :placeholder => "Enter Username", class: "form-control" %><br>
-							<%=user.password_field :password, :placeholder => "Enter Password", class: "form-control" %><br>
+							<%=user.text_field :username, :placeholder => "Enter username", class: "form-control" %><br>
+							<%=user.password_field :password, :placeholder => "Enter password", class: "form-control" %><br>
 							<%= user.submit "Log in", class: "btn btn-default" %>
 						<% end %>
 		          	</ul>
@@ -80,7 +80,7 @@
 		  </div><!-- /.container-fluid -->
 		</nav>
 		<% if flash[:error] %>
-	    	<p class="alert alert-danger"><%= flash[:error] %></p>
+	    	<div class="alert alert-danger error"><%= flash[:error] %></div>
 	    <% end %>
 	</header>
 <%= yield %>

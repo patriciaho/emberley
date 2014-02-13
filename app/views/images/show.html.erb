@@ -3,5 +3,8 @@
 <%#= image_tag @image.avatar.url %> -->
 <%= image_tag @image.image.url %>
 
+
 <%= link_to 'All', images_path %>
 <%= link_to 'New', new_image_path %>
+<%= link_to 'Edit', edit_image_path(@image) %>
+<%= link_to 'Delete', @image, method: :delete, data: { confirm: 'Are you sure?' } %>

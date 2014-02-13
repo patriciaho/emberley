@@ -19,6 +19,25 @@ class ImagesController < ApplicationController
     end
   end
 
+  def edit
+    @image = Image.find(params[:id])
+  end
+
+  def update
+    @image = Image.find(params[:id])
+    if @image.update(image_params)
+      redirect_to images_path, notice: 'Image was successfully updated.'
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    redirect_to images_url
+  end
+
   private
 
   def image_params
